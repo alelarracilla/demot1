@@ -1,25 +1,30 @@
+@use "../design-tokens/typography" as t;
+@use "../design-tokens/spacing"   as s;
+@use "../design-tokens/colors"    as c;
+@use "../design-tokens/border"    as b;
+
 .button {
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: 600;
+  padding: s.$spacing-sm s.$spacing-md;
+  border-radius: b.$border-radius-md;
+  font-weight: t.$font-weight-semibold;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease;
 
   &--primary {
-    background-color: #0070f3;
-    color: white;
+    background-color: c.$color-primary;
+    color: c.$color-white;
   }
 
   &--secondary {
-    background-color: #e2e8f0;
-    color: black;
+    background-color: c.$color-secondary;
+    color: c.$color-black;
   }
 
   &--danger {
-    background-color: #ef4444;
-    color: white;
+    background-color: c.$color-danger;
+    color: c.$color-white;
   }
 
   &--loading,
@@ -29,7 +34,7 @@
   }
 
   &__icon {
-    margin-right: 0.5rem;
+    margin-right: s.$spacing-sm;
     display: inline-flex;
   }
 }

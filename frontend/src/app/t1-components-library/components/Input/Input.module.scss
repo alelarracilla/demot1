@@ -1,34 +1,39 @@
+@use "../design-tokens/spacing" as s;
+@use "../design-tokens/typography" as t;
+@use "../design-tokens/colors" as c;
+@use "../design-tokens/border" as b;
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  font-family: sans-serif;
+  gap: s.$spacing-xs;
+  font-family: t.$font-base;
 }
 
 .input-label {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-semibold;
 }
 
 .input {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 0.375rem;
-  font-size: 1rem;
+  padding: s.$spacing-sm s.$spacing-md;
+  border: 1px solid c.$color-border;
+  border-radius: b.$border-radius-md;
+  font-size: t.$font-size-md;
   outline: none;
   transition: border-color 0.2s ease;
 
   &--error {
-    border-color: #ef4444;
+    border-color: c.$color-danger;
   }
 
   &--success {
-    border-color: #10b981;
+    border-color: c.$color-success;
   }
 
   &--disabled {
-    background-color: #f9fafb;
+    background-color: c.$color-gray-light;
     cursor: not-allowed;
-    color: #9ca3af;
+    color: c.$color-gray;
   }
 }

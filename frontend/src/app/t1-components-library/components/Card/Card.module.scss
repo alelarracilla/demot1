@@ -1,23 +1,27 @@
+@use "../design-tokens/colors" as c;
+@use "../design-tokens/spacing" as s;
+@use "../design-tokens/border" as b;
+
 .card {
-  background-color: white;
+  background-color: c.$color-white;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
 
   &--default {
-    border-radius: 0.25rem;
-    border: 1px solid #e5e7eb;
+    border-radius: b.$border-radius-sm;
+    border: 1px solid c.$color-border;
   }
 
   &--rounded {
-    border-radius: 1rem;
-    border: 1px solid #e5e7eb;
+    border-radius: b.$border-radius-lg;
+    border: 1px solid c.$color-border;
   }
 
   &--outlined {
-    border: 2px dashed #9ca3af;
-    border-radius: 0.5rem;
+    border: b.$border-style-dashed;
+    border-radius: b.$border-radius-md;
   }
 }
 
@@ -28,8 +32,8 @@
 }
 
 .card-section {
-  padding: 1rem;
-  border-top: 1px solid #f1f1f1;
+  padding: s.$spacing-md;
+  border-top: 1px solid c.$color-gray-light;
 
   &:first-child {
     border-top: none;
