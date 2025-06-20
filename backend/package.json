@@ -21,8 +21,10 @@
   "devDependencies": {
     "@types/bcryptjs": "^3.0.0",
     "@types/express": "^5.0.3",
+    "@types/json2csv": "^5.0.7",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.3",
+    "json2csv": "^6.0.0-alpha.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
