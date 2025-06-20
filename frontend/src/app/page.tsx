@@ -107,7 +107,7 @@ export default function Home() {
             borderStyle="default"
           />
           <Card
-            image="https://via.placeholder.com/400x200"
+            image="https://picsum.photos/700/300"
             header={<div className="font-semibold">With Image</div>}
             body={<div>Image-supported content.</div>}
             footer={<div className="text-sm">Image Footer</div>}
