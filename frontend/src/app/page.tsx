@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 
-import Button from "./t1-components-library/components/Button/Button";
-import Input from "./t1-components-library/components/Input/Input";
-import Card from "./t1-components-library/components/Card/Card";
-import Modal from "./t1-components-library/components/Modal/Modal";
+import { Button, Input, Modal, Card } from "./t1-components-library/components";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState<null | 'small' | 'medium' | 'large'>(null);
+  const [isModalOpen, setIsModalOpen] = useState<
+    null | "small" | "medium" | "large"
+  >(null);
 
   return (
     <div className="p-8 space-y-12 font-sans">
