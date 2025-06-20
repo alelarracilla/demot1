@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./Card.module.scss";
 import { CardProps } from "./types";
 
-const Card: React.FC<CardProps> = ({
+export const Card: React.FC<CardProps> = ({
   image,
   header,
   body,
@@ -23,5 +23,3 @@ const Card: React.FC<CardProps> = ({
     </div>
   );
 };
-
-export default Card;

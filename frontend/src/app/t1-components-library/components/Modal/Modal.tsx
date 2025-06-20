@@ -3,7 +3,7 @@ import styles from "./Modal.module.scss";
 import classNames from "classnames";
 import { ModalProps } from "./types";
 
-const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   size = "medium",
@@ -36,5 +36,3 @@ const Modal: React.FC<ModalProps> = ({
     </div>
   );
 };
-
-export default Modal;

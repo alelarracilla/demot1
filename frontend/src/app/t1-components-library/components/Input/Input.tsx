@@ -1,9 +1,8 @@
-import React from "react";
 import classNames from "classnames";
 import styles from "./Input.module.scss";
 import { InputProps } from "./types";
 
-const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
   type = "text",
   state = "default",
   label,
@@ -28,5 +27,3 @@ const Input: React.FC<InputProps> = ({
     </div>
   );
 };
-
-export default Input;

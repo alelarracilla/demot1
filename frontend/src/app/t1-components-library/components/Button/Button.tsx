@@ -1,9 +1,8 @@
-import React from "react";
 import classNames from "classnames";
 import styles from "./Button.module.scss";
 import { ButtonPropTypes } from "./types";
 
-const Button: React.FC<ButtonPropTypes> = ({
+export const Button: React.FC<ButtonPropTypes> = ({
   variant = "primary",
   state = "default",
   icon,
@@ -30,5 +29,3 @@ const Button: React.FC<ButtonPropTypes> = ({
     </button>
   );
 };
-
-export default Button;
