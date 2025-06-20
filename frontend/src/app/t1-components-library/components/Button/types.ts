@@ -1,6 +1,6 @@
 import { ReactNode, ButtonHTMLAttributes } from "react";
 
-export type ButtonVariant = "default" | "secondary" | "danger";
+export type ButtonVariant = "primary" | "secondary" | "danger";
 export type ButtonState = "default" | "loading" | "disabled";
 
 export interface ButtonPropTypes
