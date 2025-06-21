@@ -8,6 +8,7 @@ import {
   Modal,
   Card,
 } from "../t1-components-library/components";
+import { Dashboard } from "../components/Dashboard/Dashboard";
 
 export default function Home() {
   const router = useRouter();
@@ -29,8 +30,8 @@ export default function Home() {
 
   return (
     <div className="p-8 space-y-12 font-sans">
-      <h1 className="text-3xl font-bold">Component Library Demo</h1>
-
+      <h1 className="text-center text-3xl font-bold">Component Library Demo</h1>
+      <Dashboard />
       <section>
         <h2 className="text-2xl font-semibold mb-4">Buttons</h2>
         <div className="flex flex-wrap gap-4">
