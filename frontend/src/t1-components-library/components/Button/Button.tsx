@@ -1,12 +1,14 @@
 import classNames from "classnames";
 import styles from "./Button.module.scss";
 import { ButtonPropTypes } from "./types";
+import { trackComponentInteraction } from "../tracking";
 
 export const Button: React.FC<ButtonPropTypes> = ({
   variant = "primary",
   state = "default",
   icon,
   children,
+  onClick,
   ...props
 }) => {
   const isDisabled = state === "disabled" || state === "loading";
@@ -16,8 +18,24 @@ export const Button: React.FC<ButtonPropTypes> = ({
     [styles["button--disabled"]]: state === "disabled",
   });
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!isDisabled) {
+      trackComponentInteraction({
+        name: "Button",
+        variant,
+        action: "click",
+      });
+      onClick?.(e);
+    }
+  };
+
   return (
-    <button className={buttonClass} disabled={isDisabled} {...props}>
+    <button
+      className={buttonClass}
+      disabled={isDisabled}
+      onClick={handleClick}
+      {...props}
+    >
       {state === "loading" ? (
         "Loading..."
       ) : (

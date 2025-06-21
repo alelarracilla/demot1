@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Button, Input, Modal, Card } from "./t1-components-library/components";
+import { Button, Input, Modal, Card } from "../t1-components-library/components";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<
