@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import styles from "./Card.module.scss";
 import { CardProps } from "./types";
+import { trackComponentInteraction } from "../tracking";
 
 export const Card: React.FC<CardProps> = ({
   image,
@@ -12,8 +13,16 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   const cardClass = classNames(styles.card, styles[`card--${borderStyle}`]);
 
+  const handleClick = () => {
+    trackComponentInteraction({
+      name: "Card",
+      variant: borderStyle,
+      action: "click",
+    });
+  };
+
   return (
-    <div className={cardClass}>
+    <div className={cardClass} onClick={handleClick}>
       {image && (
         <img src={image} alt="Card image" className={styles["card-image"]} />
       )}

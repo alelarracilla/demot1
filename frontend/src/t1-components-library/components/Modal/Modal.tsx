@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Modal.module.scss";
 import classNames from "classnames";
 import { ModalProps } from "./types";
+import { trackComponentInteraction } from "../tracking";
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
@@ -11,6 +12,16 @@ export const Modal: React.FC<ModalProps> = ({
   body,
   footer,
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      trackComponentInteraction({
+        name: "Modal",
+        variant: size,
+        action: "open",
+      });
+    }
+  }, [isOpen, size]);
+
   if (!isOpen) return null;
 
   const modalClass = classNames(styles.modal, styles[`modal--${size}`]);

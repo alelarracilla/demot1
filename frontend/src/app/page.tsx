@@ -1,13 +1,31 @@
 "use client";
 
-import { useState } from "react";
-
-import { Button, Input, Modal, Card } from "../t1-components-library/components";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  Button,
+  Input,
+  Modal,
+  Card,
+} from "../t1-components-library/components";
 
 export default function Home() {
+  const router = useRouter();
+  const [checkingAuth, setCheckingAuth] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState<
     null | "small" | "medium" | "large"
   >(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/login");
+    } else {
+      setCheckingAuth(false);
+    }
+  }, [router]);
+
+  if (checkingAuth) return null;
 
   return (
     <div className="p-8 space-y-12 font-sans">
