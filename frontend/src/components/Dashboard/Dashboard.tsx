@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from "react";
 import { DonutChart } from "../DonutChart/DonutChart";
@@ -40,11 +40,55 @@ export const Dashboard = () => {
 
   const entries = Object.entries(grouped);
 
+  const exportCSV = () => {
+    const header = "name,action,variant,timestamp\n";
+    const rows = stats
+      .map((s) => `${s.name},${s.action},${s.variant || ""},${s.timestamp}`)
+      .join("\n");
+    const blob = new Blob([header + rows], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "component-stats.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
+  const exportJSON = () => {
+    const blob = new Blob([JSON.stringify(stats, null, 2)], {
+      type: "application/json",
+    });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "component-stats.json";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
   return (
-    <div className="bg-transparent text-gray-800 rounded-xl w-full shadow-none space-y-4">
-      <div>
-        <h2 className="text-xl font-bold mb-1">Estadísticas en Tiempo Real</h2>
-        <p className="text-sm text-gray-500">Total de interacciones: {total}</p>
+    <div className="bg-transparent text-gray-800 rounded-xl p-6 w-full space-y-6">
+      <div className="flex justify-between items-center">
+        <div>
+          <h2 className="text-xl font-bold mb-1">Estadísticas en Tiempo Real</h2>
+          <p className="text-sm text-gray-500">Total de interacciones: {total}</p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={exportCSV}
+            className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100"
+          >
+            Exportar CSV
+          </button>
+          <button
+            onClick={exportJSON}
+            className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100"
+          >
+            Exportar JSON
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-6 justify-start">
