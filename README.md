@@ -56,14 +56,6 @@ npm run dev
 
 📁 Ubicación: `frontend/` o `src/app/` si está en un solo monorepo
 
-### 🔧 Configuración
-
-Crea un archivo `.env.local` con:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-```
-
 ### 📦 Instalación
 
 ```bash
