@@ -73,6 +73,20 @@ npm run dev
 
 ---
 
+## 🧪 Tests (Frontend)
+
+Para ejecutar las pruebas unitarias en el frontend:
+
+```bash
+cd frontend
+npm run test
+```
+
+Asegúrate de tener configurado un entorno de pruebas (por ejemplo, **Jest** o **React Testing Library**).  
+Puedes personalizar el comportamiento en `jest.config.js` o similar según tu stack de testing.
+
+---
+
 ## 🧪 Funcionalidades
 
 - ✅ Showcase interactivo de componentes (`/`)
