@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import { DonutChart } from "../DonutChart/DonutChart";
@@ -69,25 +69,15 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="bg-transparent text-gray-800 rounded-xl p-6 w-full space-y-6">
+    <div className="bg-transparent text-gray-800 rounded-xl w-full space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-xl font-bold mb-1">Estadísticas en Tiempo Real</h2>
-          <p className="text-sm text-gray-500">Total de interacciones: {total}</p>
-        </div>
-        <div className="flex gap-2">
-          <button
-            onClick={exportCSV}
-            className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100"
-          >
-            Exportar CSV
-          </button>
-          <button
-            onClick={exportJSON}
-            className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100"
-          >
-            Exportar JSON
-          </button>
+          <h2 className="text-2xl font-semibold mb-4">
+            Estadísticas en tiempo real
+          </h2>
+          <p className="text-sm text-gray-500">
+            Total de interacciones: {total}
+          </p>
         </div>
       </div>
 
@@ -101,6 +91,20 @@ export const Dashboard = () => {
             </div>
           );
         })}
+      </div>
+      <div className="flex gap-2">
+        <button
+          onClick={exportCSV}
+          className="px-5 py-3 text-sm text-white bg-green-500 hover:bg-green-600 rounded transition"
+        >
+          Exportar CSV
+        </button>
+        <button
+          onClick={exportJSON}
+          className="px-5 py-3 text-sm text-white bg-green-500 hover:bg-green-600 rounded transition"
+        >
+          Exportar JSON
+        </button>
       </div>
     </div>
   );

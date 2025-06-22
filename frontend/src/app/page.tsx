@@ -33,7 +33,7 @@ export default function Home() {
       <h1 className="text-center text-3xl font-bold">Component Library Demo</h1>
       <Dashboard />
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Buttons</h2>
+        <h2 className="text-2xl font-semibold mb-4">Buttons (Tracking on click)</h2>
         <div className="flex flex-wrap gap-4">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
@@ -48,7 +48,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Inputs</h2>
+        <h2 className="text-2xl font-semibold mb-4">Inputs (Tracking onFocus)</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Input label="Default" placeholder="Your name" />
           <Input label="Email" type="email" placeholder="email@example.com" />
@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Modals</h2>
+        <h2 className="text-2xl font-semibold mb-4">Modals (Tracking on Open)</h2>
         <div className="flex flex-wrap gap-4">
           <Button onClick={() => setIsModalOpen("small")}>
             Open Small Modal
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Cards</h2>
+        <h2 className="text-2xl font-semibold mb-4">Cards (Tracking on click)</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card
             header={<div className="font-semibold">Card Header</div>}
